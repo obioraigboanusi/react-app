@@ -1,0 +1,403 @@
+@font-face {
+  font-family: "Faible";
+  src: url("./assets/fonts/Faible/Faible-Black.woff")
+  format("woff");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Faible";
+  src: url("./assets/fonts/Faible/Faible-Bold.woff")
+  format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Faible";
+  src: url("./assets/fonts/Faible/Faible-Regular.woff")
+  format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Spoof Trial";
+  src: url("./assets/fonts/SpoofTrial/SpoofTrial-Black.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Spoof Trial";
+  src: url("./assets/fonts/SpoofTrial/SpoofTrial-Bold.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Spoof Trial";
+  src: url("./assets/fonts/SpoofTrial/SpoofTrial-Regular.otf");
+  font-weight: 400;
+}
+@keyframes slideIn{
+  0%{
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  100%{
+    transform:unset;
+    opacity: 1;
+  }
+}
+@-moz-keyframes slideIn{
+  0%{
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  100%{
+    transform:unset;
+    opacity: 1;
+  }
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Faible';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  background-color: #FFF8EF;
+  position: relative;
+  overflow-x: hidden;
+}
+h1{
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 900;
+}
+h3{
+  font-size: .7rem;
+}
+ul{
+  list-style: none;
+}
+
+a{  
+  text-decoration: none;
+}
+li a{
+  font-size: .9rem;
+  text-transform: capitalize;
+  padding: .5rem 1rem;
+}
+main{
+  padding: 2rem 5% 0 5%;
+}
+
+.ff-spooftrial{
+  font-family: 'Spoof Trial';
+}
+
+ /* navbar  */
+ .nav-inner{
+  display: flex;
+  align-items: center;
+}
+.logo{
+  height: 1.5rem;
+}
+.nav-links{
+  display: block;
+  position: absolute;
+  top: -100vh;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.527);
+  z-index: 1001;
+}
+.nav-links ul{
+  width: 100%;
+  margin: auto;
+  background-color: #FFF8EF;
+  padding: 2rem;
+}
+.nav-links.active{
+  top: 100%;
+}
+.nav-links li a{
+  display: block;
+  font-weight: 700;
+  transition: background-color .5s ease-out;
+}
+.nav-links li a:hover{
+background-color: #004E4C;
+color: white;
+
+}
+.nav-links li a:active{
+background-color: red;
+color: white;
+
+}
+.nav-header{
+  position: sticky;
+  top: 0;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 90%;
+  margin: auto;
+  background-color: #FFF8EF;
+}
+
+ /* hanmburger */
+ .burger{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 2px;
+  margin-left: 5px;
+  background-color: transparent;
+}
+.line-1, .line-2, .line-3{
+  height: 2px;
+  background-color: #004E4C;
+  display: block;
+  margin: 2px 0;
+}
+.line-2{
+  width: 100%;
+}
+.line-1{
+  width: 80%;
+}
+.line-3{
+  width: 60%;
+}
+.toggle .line-1 {
+  transform: rotate(45deg) translate( 4px, 3px);
+}
+
+.toggle .line-2 {
+  opacity: 0;
+}
+
+.toggle .line-3 {
+  transform: rotate(-45deg) translate(5px, -4px);
+  width: 80%;
+}
+
+.hero{
+  margin: 3rem 0;
+} 
+button, a.btn{
+  border: none;
+  border-radius: 5px;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.contact-btn{
+  padding: .5rem 1rem;
+  background-color: #FFA722;
+  color: #ffffff;
+  font-size: .8rem;
+  transition: background-color .5s ease-out;
+}
+.contact-btn:hover{
+  background-color: #e98c00;
+}
+
+.color-green{
+ color: #004E4C;
+}
+.color-warning{
+  color: #FFA722;
+}
+.header-banner{
+  width: 100%;
+}
+.header-banner img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cards-wrapper{ 
+  position: relative;
+  width: 100%;
+  background: url('./assets/icons/header-line-phone-portrait.svg');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 100% 94%;
+}
+article{
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 45%;
+  max-width: 120px;
+  position: absolute;
+  padding-bottom: 20px;
+  box-shadow:10px 10px 10px  rgba(0, 0, 0, 0.384);
+  animation: slideIn 3s;
+  transition: transform .5s ease-in-out;
+}
+article:hover{
+  transform: scale(1.2);
+}
+article img{
+  border-radius: 5px;
+  width: 100%;
+}
+hgroup p{
+  font-size: .6rem;
+}
+
+.hanging-garden{
+ display: grid;
+ grid-template-rows: 5fr 5fr;
+}
+
+article:first-of-type{
+  top: -15%;
+  left: 5%;
+} 
+article:nth-of-type(2){
+  top: 13.5%;
+  left: 55%;
+}
+article:nth-of-type(3){
+  top: 45%;
+  left: 0%;
+} 
+.pin{
+  display: none;
+}
+
+
+ @media screen and (min-width:800px){
+nav, main{
+  width: 80%;
+  margin: auto;
+  padding-right:0;
+  padding-left: 0;
+}
+.burger{
+      display: none;
+  }
+  .nav-inner{
+      flex-direction: row-reverse;
+  }
+  .nav-links {
+      position: unset;
+      width: unset;
+      height: unset;
+      background-color: unset;
+      padding: unset;
+  }
+  .nav-links ul{
+      display: flex;
+      margin-right: 1rem;
+      position: unset;
+      width: unset;
+      background-color: unset;
+      padding: unset;
+  }
+  .nav-links li{
+      margin-right: 1rem;
+  } 
+  .main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5%;
+    margin: auto;
+    background: url('./assets/icons/header-line-desktop.svg');
+    background-repeat: no-repeat;
+    background-position:70% 100%;
+    background-size: 95% 45%;
+    min-height: 90vh;
+
+    overflow: hidden;
+  } 
+  
+  .cards-wrapper{
+      position: absolute;
+      top: 0%;
+      width: 65%;
+      height: 100%; 
+      left: calc(30%/2);
+      background:none;
+      z-index: 1;
+ 
+  }
+  .large-banner-wrapper{
+      display: flex;
+      flex-direction: column-reverse;
+      width: 100%;
+      margin: auto;
+  }
+  .hanging-garden{
+    display: unset;
+    position: relative;
+    height:100%;
+    order: -1;
+  }
+  
+  .header-banner, .large-banner-wrapper header {
+     width:65%;
+     margin: auto;
+    
+  }
+  .header-banner img{
+      width: 100%;
+      border-radius: 10px;
+      margin:0 auto;
+  }
+  .wiket{
+      width: 100%;
+      max-width:300px;
+      margin-top: 8rem;
+      margin-left: 13%;
+      animation: slideIn 2s;
+  }
+  h1{
+      font-size: calc(5.423vw);
+  }
+  .fw-bold{
+      font-weight: bold;
+  }
+article{
+  width:  40%;
+}
+  article:first-of-type{
+      top: 5%;
+      left: 85%;
+  }
+  article:nth-of-type(2){
+      top: 35%;
+      left: -15%;
+  }
+  article:nth-of-type(3){
+      top: 45%;
+      left: 90%;
+  }
+  .pin{
+      display: block;
+      position: absolute;
+      width: 10px;
+  }
+  .pin:first-of-type{
+      top: 36%;
+      left: 105%;
+     
+  }
+
+  .pin:nth-of-type(2){
+      top: 20%;
+      left: -15%;
+  }
+}
